@@ -1,0 +1,256 @@
+// colores
+$verd: #559e1b;
+$gris-sutil: #eeeeee;
+$gris: #dcdada;
+$gris-fosc: #686868;
+
+body {
+    background-color: $verd;
+}
+
+// Genericas
+.capsulas {
+    width: 100%;
+    height: auto;
+    margin: 1em 0;
+    padding: 2em;
+    background-color: $gris;
+    border-radius: 8px;
+
+    h2 {
+        font-size: 2em;
+        color: $gris-fosc;
+        margin: 0 0 1em;
+    }
+}
+
+.tapiz {
+    background-color: $verd;
+}
+
+#container {
+    height: 100%;
+    padding: 1em;
+    background-color: $gris-sutil;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    text-align: center;
+
+    #maquetacio-pantalla {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 2fr repeat(5, 1fr);
+        gap: 20px;
+
+        .box {
+            background-color: #ddd;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+        }
+    }
+
+    .primera-columna {
+        grid-column: span 1; // Ocupa 1 parte de la primera columna
+
+        // cabecera con menu
+        #cabecera {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            max-width: 1200px;
+            height: 60px;
+            justify-content: space-between;
+            padding: 1em;
+
+            // Menu generico
+            #menu-generico {
+
+                // Menu hamburguesa
+                .menu-hamburguesa {
+                    display: flex;
+                    flex-direction: column;
+                    cursor: pointer;
+                    color: $gris-fosc;
+
+                    .barra {
+                        position: relative;
+                        height: 3px;
+                        width: 30px;
+                        background-color: $gris-fosc;
+                        margin: 4px 0;
+                        transition: 0.4s;
+
+                        &.barra.cerrar1 {
+                            transform: rotate(-45deg) translate(-5px, 6px);
+                            top: 3px
+                        }
+
+                        &.barra.cerrar2 {
+                            opacity: 0;
+                        }
+
+                        &.barra.cerrar3 {
+                            transform: rotate(45deg) translate(-5px, -6px);
+                            top: -3px;
+                        }
+                    }
+                }
+            }
+
+            // Info
+            #info {
+                cursor: pointer;
+                width: 30px;
+                height: 30px;
+                padding: .8em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: x-large;
+                color: #fff;
+                border-radius: 200px;
+                background-color: $gris-fosc;
+            }
+        }
+
+        #logotipo {
+            width: 100%;
+            height: 200px;
+            margin: 2em 0 5em 0;
+
+            img {
+                height: 100%;
+                width: auto;
+                margin: auto;
+            }
+        }
+
+        #marcador,
+        #apuesta {
+            height: 100px;
+            .cont-resultados {
+                display: flex;
+                justify-content: space-evenly;
+
+                p {
+                    font-size: 2em;
+                    color: $gris-fosc;
+                    margin: 0;
+                }
+            }
+        }
+
+        #botones-juego {
+            display: flex;
+            gap: 1em;
+
+            .botones {
+                width: 33%;
+                height: auto;
+                padding: .5em;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                background-color: $verd;
+                cursor: pointer;
+                transition: all .25s ease-in-out;
+
+                img {
+                    width: 50px;
+                    height: 50px;
+                    margin-bottom: 1em;
+                }
+
+                span {
+                    font-size: 1.3em;
+                    line-height: 1.2em;
+                    color: #fff;
+                    text-transform: uppercase;
+                    hyphens: none;
+                }
+            }
+        }
+
+    }
+
+    .segona-columna {
+        grid-column: span 5; // Ocupa las 5 partes de la segunda columna
+
+        #contPantallaJuego {
+            display: flex;
+            flex-direction: column;
+            gap: 2em;
+        }
+
+        #jugador,
+        #computadora {
+            height: 350px;
+            width: 100%;
+            padding: 2em;
+            border-radius: 10px;
+            background-color: $gris;
+
+
+            .titulos {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+
+        #jugador {
+            background-color: $verd;
+        }
+
+        #jugadorCartas,
+        #computadoraCartas {
+            height: 220px;
+            width: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1em;
+
+            img {
+                width: 150px;
+                height: auto;
+                padding: 1em 0 2em;
+            }
+        }
+    }
+
+
+    // Genericos
+    section {
+        padding: 1em;
+    }
+
+    h1 {
+        font-size: 3em;
+    }
+
+    p {
+        font-size: 1.6em;
+        margin-bottom: 1em;
+    }
+}
+
+
+#resultado {
+    padding: 0 0 0.6em;
+    font-size: 2.7em;
+}
+
+.carta-oculta {
+    height: 100px;
+    // background-image: url('imgs/dorso_1.svg');
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,291 @@
+/*
+ Name:         Siete & medio
+ Theme URI:    https://laperallimonera.cat
+ Description:  Joc de cartes del 7 i mig.
+ Author:       La Pera Llimonera
+ Author URI:   https://laperallimonera.cat
+ Version:      0.1
+ Created:      4.12.2023
+ Last Update:  
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  border: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  overflow-wrap: break-word;
+  hyphens: auto;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+#root,
+#__next {
+  isolation: isolate;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+body {
+  background-color: #559e1b;
+}
+
+.capsulas {
+  width: 100%;
+  height: auto;
+  margin: 1em 0;
+  padding: 2em;
+  background-color: #dcdada;
+  border-radius: 8px;
+}
+.capsulas h2 {
+  font-size: 2em;
+  color: #686868;
+  margin: 0 0 1em;
+}
+
+.tapiz {
+  background-color: #559e1b;
+}
+
+#container {
+  height: 100%;
+  padding: 1em;
+  background-color: #eeeeee;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  color: white;
+  text-align: center;
+}
+#container #maquetacio-pantalla {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr repeat(5, 1fr);
+  gap: 20px;
+}
+#container #maquetacio-pantalla .box {
+  background-color: #ddd;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+}
+#container .primera-columna {
+  grid-column: span 1;
+}
+#container .primera-columna #cabecera {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1200px;
+  height: 60px;
+  justify-content: space-between;
+  padding: 1em;
+}
+#container .primera-columna #cabecera #menu-generico .menu-hamburguesa {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  color: #686868;
+}
+#container .primera-columna #cabecera #menu-generico .menu-hamburguesa .barra {
+  position: relative;
+  height: 3px;
+  width: 30px;
+  background-color: #686868;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+#container .primera-columna #cabecera #menu-generico .menu-hamburguesa .barra.barra.cerrar1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+  top: 3px;
+}
+#container .primera-columna #cabecera #menu-generico .menu-hamburguesa .barra.barra.cerrar2 {
+  opacity: 0;
+}
+#container .primera-columna #cabecera #menu-generico .menu-hamburguesa .barra.barra.cerrar3 {
+  transform: rotate(45deg) translate(-5px, -6px);
+  top: -3px;
+}
+#container .primera-columna #cabecera #info {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  padding: 0.8em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: x-large;
+  color: #fff;
+  border-radius: 200px;
+  background-color: #686868;
+}
+#container .primera-columna #logotipo {
+  width: 100%;
+  height: 200px;
+  margin: 2em 0 5em 0;
+}
+#container .primera-columna #logotipo img {
+  height: 100%;
+  width: auto;
+  margin: auto;
+}
+#container .primera-columna #marcador,
+#container .primera-columna #apuesta {
+  height: 100px;
+}
+#container .primera-columna #marcador .cont-resultados,
+#container .primera-columna #apuesta .cont-resultados {
+  display: flex;
+  justify-content: space-evenly;
+}
+#container .primera-columna #marcador .cont-resultados p,
+#container .primera-columna #apuesta .cont-resultados p {
+  font-size: 2em;
+  color: #686868;
+  margin: 0;
+}
+#container .primera-columna #botones-juego {
+  display: flex;
+  gap: 1em;
+}
+#container .primera-columna #botones-juego .botones {
+  width: 33%;
+  height: auto;
+  padding: 0.5em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #559e1b;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+#container .primera-columna #botones-juego .botones img {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 1em;
+}
+#container .primera-columna #botones-juego .botones span {
+  font-size: 1.3em;
+  line-height: 1.2em;
+  color: #fff;
+  text-transform: uppercase;
+  hyphens: none;
+}
+#container .segona-columna {
+  grid-column: span 5;
+}
+#container .segona-columna #contPantallaJuego {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+#container .segona-columna #jugador,
+#container .segona-columna #computadora {
+  height: 350px;
+  width: 100%;
+  padding: 2em;
+  border-radius: 10px;
+  background-color: #dcdada;
+}
+#container .segona-columna #jugador .titulos,
+#container .segona-columna #computadora .titulos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#container .segona-columna #jugador {
+  background-color: #559e1b;
+}
+#container .segona-columna #jugadorCartas,
+#container .segona-columna #computadoraCartas {
+  height: 220px;
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+}
+#container .segona-columna #jugadorCartas img,
+#container .segona-columna #computadoraCartas img {
+  width: 150px;
+  height: auto;
+  padding: 1em 0 2em;
+}
+#container section {
+  padding: 1em;
+}
+#container h1 {
+  font-size: 3em;
+}
+#container p {
+  font-size: 1.6em;
+  margin-bottom: 1em;
+}
+
+#resultado {
+  padding: 0 0 0.6em;
+  font-size: 2.7em;
+}
+
+.carta-oculta {
+  height: 100px;
+  background-repeat: no-repeat;
+}

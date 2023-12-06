@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Juego de 7 y Medio</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div id="container">
+      <!--! SECCION Encabezado -->
+      <div id="maquetacio-pantalla">
+        <div class="primera-columna">
+          <section id="cabecera">
+            <!-- Menu -->
+            <div id="menu-generico">
+              <!-- hamburguer -->
+              <div class="menu-hamburguesa" onclick="toggleMenu()">
+                <div class="barra"></div>
+                <div class="barra"></div>
+                <div class="barra"></div>
+              </div>
+            </div>
+            <!-- boton infornmacion -->
+            <div id="info">i</div>
+          </section>
+          <!--! SECCION Logotipo -->
+          <section id="logotipo">
+            <img src="imgs/Logo-7-y-medio-gris.svg" alt="logotip 7 i mig" />
+          </section>
+
+          <!--! SECCION Puntos totales -->
+          <section id="marcador" class="capsulas">
+            <h2>Punts</h2>
+            <div class="cont-resultados">
+              <p id="jugadorMarcador">Tú: 0</p>
+              <p id="computadoraMarcador">Ordinador: 0</p>
+            </div>
+          </section>
+
+          <!--! SECCION Apuestas -->
+          <section id="apuesta" class="capsulas">
+            <h2>Apuesta</h2>
+            <div class="cont-resultados">
+            </div>
+          </section>
+
+          <!--! SECCION Botones de juego -->
+          <section id="botones-juego" class="capsulas tapiz">
+              <!-- nova parida -->
+              <button class="botones" onclick="nuevaPartida()">
+                <img src="imgs/play-button.svg" alt="icona jugar"/>
+                <span>Nova Partida</span>
+              </button>
+              <!-- Demanar Carta -->
+              <button class="botones" onclick="pedirCarta()" disabled>
+                <img src="imgs/moreCards-button.svg" alt="icona mes cartes"/>
+                <span>Demanar Carta</span>
+              </button>
+              <button class="botones" onclick="plantarse()" disabled>
+                <img src="imgs/stop-button.svg" alt="icona em planto stop"/>
+                <span>Em planto!</span>
+              </button>
+          </section>
+        </div>
+
+        <div class="segona-columna">
+          <!--! SECCIO pantalla de joc -->
+          <!-- Contenedor para la mano de la computadora -->
+          <main id="contPantallaJuego">
+            <div id="computadora">
+              <div class="titulos">
+                <p>Cartes de l'ordinador</p>
+                <p id="computadoraPuntuacion"></p>
+              </div>
+              <div id="computadoraCartas"></div>
+            </div>
+            <!-- Contenedor para la mano del jugador -->
+            <div id="jugador">
+              <div class="titulos">
+                <p>Les teves cartes</p>
+                <p id="jugadorPuntuacion"></p>
+              </div>
+              <div id="jugadorCartas"></div>
+            </div>
+          </main>
+        </div>
+      </div>
+
+      <!-- Resultado de la partida -->
+      <section id="resultado"></section>
+
+      <section><p>joc fet per La Pera Llimonera. 2024</p></section>
+    </div>
+
+    <script src="js/siete.js"></script>
+  </body>
+</html>

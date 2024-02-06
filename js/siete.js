@@ -1,13 +1,3 @@
-// Menu hamburguesa
-function toggleMenu() {
-  const barras = document.querySelectorAll('.barra');
-  
-  // Alternar clases para animar las barras al hacer clic
-  barras[0].classList.toggle('cerrar1');
-  barras[1].classList.toggle('cerrar2');
-  barras[2].classList.toggle('cerrar3');
-}
-
 // mostrar/ocultar columna Menu
 function toggleMenu() {
   const barras = document.querySelectorAll('.barra');
@@ -36,16 +26,16 @@ function cerrarMenu() {
 
 // Definición de las cartas y las manos
 let cartas = [
-  { nombre: "1", valor: 1, imagen: "imgs/1.svg" },
-  { nombre: "2", valor: 2, imagen: "imgs/2.svg" },
-  { nombre: "3", valor: 3, imagen: "imgs/3.svg" },
-  { nombre: "4", valor: 4, imagen: "imgs/4.svg" },
-  { nombre: "5", valor: 5, imagen: "imgs/5.svg" },
-  { nombre: "6", valor: 6, imagen: "imgs/6.svg" },
-  { nombre: "7", valor: 7, imagen: "imgs/7.svg" }, // Cambiado de 7.5 a 7
-  { nombre: "sota", valor: 0.5, imagen: "imgs/8.svg" }, // Cambiado de 10 a sota
-  { nombre: "caballo", valor: 0.5, imagen: "imgs/9.svg" }, // Cambiado de 11 a caballo
-  { nombre: "rey", valor: 0.5, imagen: "imgs/10.svg" }, // Cambiado de 12 a rey
+  { nombre: "1", valor: 1, imagen: "imgs/c1.svg" },
+  { nombre: "2", valor: 2, imagen: "imgs/c2.svg" },
+  { nombre: "3", valor: 3, imagen: "imgs/c3.svg" },
+  { nombre: "4", valor: 4, imagen: "imgs/c4.svg" },
+  { nombre: "5", valor: 5, imagen: "imgs/c5.svg" },
+  { nombre: "6", valor: 6, imagen: "imgs/c6.svg" },
+  { nombre: "7", valor: 7, imagen: "imgs/c7.svg" }, // Cambiado de 7.5 a 7
+  { nombre: "sota", valor: 0.5, imagen: "imgs/cs.svg" }, // Cambiado de 10 a sota
+  { nombre: "caballo", valor: 0.5, imagen: "imgs/cc.svg" }, // Cambiado de 11 a caballo
+  { nombre: "rey", valor: 0.5, imagen: "imgs/cr.svg" }, // Cambiado de 12 a rey
 ];
 
 let jugadorCartas = []; // Mano del jugador
@@ -144,7 +134,7 @@ function actualizarPantalla() {
     .map((carta) => {
       return carta.oculta
         ? `<img src="imgs/dorso_1.svg" alt="Carta Oculta" class="carta-oculta">`
-        : `<img src="${carta.imagen}" alt="${carta.nombre}">`;
+        : `<div class="sim-contCarta"><img src="${carta.imagen}" alt="${carta.nombre}"></div>`;
     })
     .join("");
   document.getElementById("jugadorCartas").innerHTML = jugadorCartasHTML;

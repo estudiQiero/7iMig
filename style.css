@@ -104,7 +104,7 @@ body {
 #container {
   height: 100%;
   padding: 1em;
-  background-color: #eeeeee;
+  background-color: #3c3c3c;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -243,7 +243,7 @@ body {
   width: 100%;
   padding: 2em;
   border-radius: 10px;
-  background-color: #dcdada;
+  background-color: #535353;
 }
 #container .segona-columna #jugador .titulos,
 #container .segona-columna #computadora .titulos {
@@ -257,17 +257,27 @@ body {
 #container .segona-columna #jugadorCartas,
 #container .segona-columna #computadoraCartas {
   height: 220px;
-  width: auto;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  gap: 1em;
+  justify-content: left;
+  gap: 0;
 }
-#container .segona-columna #jugadorCartas img,
-#container .segona-columna #computadoraCartas img {
+#container .segona-columna #jugadorCartas .sim-contCarta,
+#container .segona-columna #computadoraCartas .sim-contCarta {
   width: 150px;
-  height: auto;
-  padding: 1em 0 2em;
+  overflow: hidden;
+}
+#container .segona-columna #jugadorCartas .sim-contCarta:last-child,
+#container .segona-columna #computadoraCartas .sim-contCarta:last-child {
+  overflow: visible;
+}
+#container .segona-columna #jugadorCartas .sim-contCarta img,
+#container .segona-columna #computadoraCartas .sim-contCarta img {
+  width: 150px;
+  height: 220px;
+  padding: 0;
+  max-width: none;
 }
 #container section {
   padding: 1em;
